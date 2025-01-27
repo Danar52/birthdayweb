@@ -202,6 +202,61 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Balon */
+.balloon {
+    position: absolute;
+    bottom: -100px; /* Mulai dari luar layar bawah */
+    width: 50px;
+    height: 70px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Variasi warna balon */
+.balloon-1 { background-color: #ff6f61; animation-delay: 0s; }
+.balloon-2 { background-color: #ffeb3b; animation-delay: 2s; }
+.balloon-3 { background-color: #4caf50; animation-delay: 4s; }
+.balloon-4 { background-color: #2196f3; animation-delay: 1s; }
+.balloon-5 { background-color: #9c27b0; animation-delay: 3s; }
+.balloon-6 { background-color: #ff9800; animation-delay: 5s; }
+.balloon-7 { background-color: #e91e63; animation-delay: 6s; }
+.balloon-8 { background-color: #795548; animation-delay: 7s; }
+
+/* Animasi balon melayang ke atas */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Mulai dari bawah */
+        opacity: 1; /* Balon terlihat */
+    }
+    50% {
+        transform: translateY(-50px); /* Sedikit melayang */
+    }
+    100% {
+        transform: translateY(-120vh); /* Keluar layar ke atas */
+        opacity: 0; /* Menghilang di atas */
+    }
+}
+
+/* Media queries untuk smartphone */
+@media (max-width: 768px) {
+    .balloon {
+        width: 35px; /* Ukuran balon lebih kecil */
+        height: 50px;
+        animation: float 10s infinite ease-in-out; /* Animasi lebih lambat */
+    }
+
+    .balloon-1 { animation-delay: 0s; }
+    .balloon-2 { animation-delay: 1s; }
+    .balloon-3 { animation-delay: 2s; }
+    .balloon-4 { animation-delay: 3s; }
+    .balloon-5 { animation-delay: 4s; }
+    .balloon-6 { animation-delay: 5s; }
+    .balloon-7 { animation-delay: 6s; }
+    .balloon-8 { animation-delay: 7s; }
+}
     </style>
 </head>
 
