@@ -1,0 +1,136 @@
+/* Gaya untuk halaman ucapan */
+.message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Menambahkan posisi relatif agar balon berada dalam konteks ini */
+}
+
+.image-container {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Gambar berada di bawah balon */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%); /* Membuat gambar lebih gelap untuk kontras teks */
+    transition: opacity 1s ease-in-out; /* Menambahkan transisi untuk efek berganti gambar */
+}
+
+.text-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: black; /* Warna font hitam */
+    z-index: 2; /* Teks berada di atas gambar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Judul ucapan */
+.text-container h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin: 0;
+    color: black; /* Warna judul tetap hitam */
+}
+
+/* Teks yang diketik */
+.text-container p {
+    font-size: 1.5rem;
+    font-family: 'Lora', serif;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: black; /* Warna font utama hitam */
+}
+
+/* Efek teks typing */
+.text-container p span {
+    border-right: 2px solid #000;
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Efek mengetik */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Efek kedipan kursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Animasi Balon */
+.balloon {
+    position: absolute;
+    bottom: -150px; /* Mulai dari bawah */
+    width: 50px;
+    height: 70px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    animation: floatBalloon 8s infinite;
+    animation-timing-function: ease-in;
+    z-index: 3; /* Pastikan balon berada di atas gambar dan teks */
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: #000;
+    left: 50%;
+    margin-left: -1px;
+    bottom: -50px;
+}
+
+/* Animasi untuk balon bergerak naik */
+@keyframes floatBalloon {
+    0% {
+        bottom: -150px;
+        transform: scale(1);
+    }
+    50% {
+        transform: translateY(-200px) scale(1.2); /* Naik lebih tinggi dengan sedikit membesar */
+    }
+    100% {
+        bottom: -150px;
+        transform: translateY(-400px) scale(1);
+    }
+}
+
+/* Tombol yang akan muncul setelah mengetik selesai */
+.button {
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 50px;
+    font-family: 'Dancing Script', cursive;
+    transition: background-color 0.3s ease;
+    display: none; /* Tombol disembunyikan saat pertama kali */
+    margin-top: 20px;
+    align-self: center; /* Menempatkan tombol di tengah */
+}
+
+.button:hover {
+    background-color: #e7554f;
+}
