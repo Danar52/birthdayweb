@@ -16,9 +16,7 @@
             height: 100%;
             font-family: 'Lora', serif;
             background-color: #f0f8ff;
-            /* Warna background langit */
             overflow-x: hidden;
-            /* Agar tidak ada scrollbar horizontal */
         }
 
         /* Halaman pertama */
@@ -75,217 +73,13 @@
             background-color: #f4c430;
         }
 
-        /* Halaman kedua (Pesan dan Balon) */
-        .message-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        .image-container {
-            width: 40%;
-            height: 120%;
-            /* Ubah menjadi lebih tinggi jika perlu */
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            /* Tingkatkan tinggi sesuai dengan kebutuhan */
-            object-fit: contain;
-            /* Membuat gambar tetap proporsional dan lebih tinggi */
-            filter: brightness(60%);
-            transition: opacity 1s ease-in-out;
-        }
-
-        .image-container img.fade {
-            opacity: 0;
-        }
-
-        .text-container {
-            width: 50%;
-            padding: 20px;
-            box-sizing: border-box;
-            color: black;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .text-container h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            margin: 0;
-            color: black;
-        }
-
-        .text-container p {
-            font-size: 1.5rem;
-            font-family: 'Lora', serif;
-            margin-top: 10px;
-            white-space: pre-wrap;
-            line-height: 1.6;
-            color: black;
-        }
-
-        .text-container p span {
-            border-right: 2px solid #000;
-            animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        /* Animasi balon */
-        .balloon {
-            position: absolute;
-            bottom: -150px;
-            width: 50px;
-            height: 70px;
-            border-radius: 50%;
-            animation: floatBalloon 10s infinite;
-            animation-timing-function: ease-in-out;
-            z-index: 3;
-        }
-
-        .balloon:before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 50px;
-            background-color: #000;
-            left: 50%;
-            margin-left: -1px;
-            bottom: -50px;
-        }
-
-        /* Definisikan warna balon */
-        .balloon-1 {
-            background-color: #ff6f61;
-            animation-delay: 0s;
-        }
-
-        .balloon-2 {
-            background-color: #ffeb3b;
-            animation-delay: 1s;
-        }
-
-        .balloon-3 {
-            background-color: #4b9cd3;
-            animation-delay: 2s;
-        }
-
-        .balloon-4 {
-            background-color: #ff9800;
-            animation-delay: 3s;
-        }
-
-        .balloon-5 {
-            background-color: #9c27b0;
-            animation-delay: 4s;
-        }
-
-        .balloon-6 {
-            background-color: #00bcd4;
-            animation-delay: 5s;
-        }
-
-        .balloon-7 {
-            background-color: #8bc34a;
-            animation-delay: 6s;
-        }
-
-        .balloon-8 {
-            background-color: #e91e63;
-            animation-delay: 7s;
-        }
-
-        @keyframes floatBalloon {
-            0% {
-                bottom: -150px;
-                transform: scale(1);
-            }
-
-            50% {
-                transform: translateY(-400px) scale(1.2);
-            }
-
-            100% {
-                bottom: -150px;
-                transform: translateY(-800px) scale(1);
-            }
-        }
-
-        /* Tombol next */
-        .button-next {
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            background-color: #ff6f61;
-            color: white;
-            border-radius: 50px;
-            font-family: 'Dancing Script', cursive;
-            transition: background-color 0.3s ease;
-            display: none;
-            margin-top: 20px;
-            align-self: center;
-        }
-
-        .button-next:hover {
-            background-color: #e7554f;
-        }
-
-        /* Pesta */
-        /* Menambahkan margin bawah pada party-container */
+        /* Halaman kedua (party web)*/
         .party-container {
-            position: relative;
             text-align: center;
             padding: 50px;
-            margin-bottom: 200px;
-            /* Menambahkan jarak di bawah halaman kedua */
-        }
-
-        /* Memberikan margin pada elemen div yang membungkus tombol */
-        .party-container>div {
-            margin-top: 30px;
-            /* Jarak antara gambar dan tombol */
-        }
-
-        /* Atau, jika ingin memberikan margin langsung pada tombol */
-        .button-msg {
-            background-color: #ff6f61;
-            padding: 15px 30px;
-            color: white;
-            font-family: 'Dancing Script', cursive;
-            margin-top: 100px;
-            /* Jarak antara gambar dan tombol */
-            padding: 15px 30px;
-            border-radius: 50px;
         }
 
         .party-container h2 {
-            margin-top: 100px;
             font-family: 'Dancing Script', cursive;
             font-size: 3rem;
             color: #ff6f61;
@@ -293,71 +87,77 @@
         }
 
         .party-container .birthday-cake {
-            width: 20%;
-            /* Menyesuaikan ukuran gambar kue dengan ukuran asli (dikecilkan) */
-            max-width: 500px;
-            /* Batas maksimal gambar */
+            width: 80%;
+            max-width: 400px;
             height: auto;
             object-fit: contain;
-            /* Gambar akan menyesuaikan dengan lebar container tanpa memotong */
             border-radius: 15px;
             margin-bottom: 20px;
-            /* Menambahkan margin bawah untuk memberi jarak ke tombol */
         }
 
-        .party-lights {
-            position: absolute;
-            top: 50px;
-            width: 93%;
-            height: 10px;
-            background-color: #ffeb3b;
-            animation: lightFlash 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes lightFlash {
-            0% {
-                background-color: #ffeb3b;
-            }
-
-            50% {
-                background-color: #f4c430;
-            }
-
-            100% {
-                background-color: #ffeb3b;
-            }
-        }
-
-        .next-button {
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+        .button-msg {
             background-color: #ff6f61;
+            padding: 15px 30px;
             color: white;
-            border-radius: 50px;
             font-family: 'Dancing Script', cursive;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            border-radius: 50px;
+            text-decoration: none;
             display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
-        .next-button:hover {
+        .button-msg:hover {
             background-color: #e7554f;
         }
 
-        /* Menambahkan transisi ke gambar */
-        .image-container img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: opacity 1s ease-in-out;
-            /* Transisi opacity untuk efek perubahan gambar */
+        /* Halaman ketiga (Pesan dan Balon) */
+        .message-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
         }
 
-        .image-container img.fade {
-            opacity: 0;
-            /* Gambar sementara dihapus dari tampilan */
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out; /* Transisi halus */
+}
+
+.image-container img.fade-out {
+    opacity: 0; /* Gambar akan memudar */
+}
+
+        .text-container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .text-container h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .text-container p {
+            font-size: 1rem;
+            font-family: 'Lora', serif;
+            line-height: 1.6;
+            color: black;
         }
 
         /* Responsif */
@@ -463,50 +263,57 @@
 
         // Efek mengetik
         window.onload = function () {
-            const text = "Selamat ulang tahun yang ke-22, Iwiddd. Semoga panjang umur, sehat selaluu, lancar rezekinyaa, jadi anak yang berbakti sama orang tua. Semoga tahun ini membawa kebahagiaan kamu dan semoga segala impian kamu tercapaii semua ditahun ini. Thanks ya udah hadir dan lahir di dunia ini, tetep jadi Iwidd yang aku kenall setiap hari, thanks atas kebahagiaan yang kamu bawa dalam hidup aku selama ini. Aku Sayang Sama Kamu, I always try to be the best for you, because you deserve all the happiness 🩵";
-            let index = 0;
-            const typingText = document.getElementById('typingText');
-            const nextButton = document.getElementById('nextButton');
+    // Teks untuk efek mengetik
+    const text = "Selamat ulang tahun yang ke-22, Iwiddd. Semoga panjang umur, sehat selaluu, lancar rezekinyaa, jadi anak yang berbakti sama orang tua. Semoga tahun ini membawa kebahagiaan kamu dan semoga segala impian kamu tercapaii semua ditahun ini. Thanks ya udah hadir dan lahir di dunia ini, tetep jadi Iwidd yang aku kenall setiap hari, thanks atas kebahagiaan yang kamu bawa dalam hidup aku selama ini. Aku Sayang Sama Kamu, I always try to be the best for you, because you deserve all the happiness 🩵";
+    let index = 0;
+    const typingText = document.getElementById('typingText');
+    const nextButton = document.getElementById('nextButton'); // Pastikan elemen ini ada di HTML jika ingin digunakan
 
-            function type() {
-                if (index < text.length) {
-                    typingText.textContent += text.charAt(index);  // Gunakan textContent untuk mencegah tag HTML ditulis sebagai teks biasa
-                    index++;
-                    setTimeout(type, 100);
-                } else {
-                    typingText.innerHTML = typingText.innerHTML;  // Force rendering of HTML (optional)
-                    nextButton.style.display = 'inline-block'; // Tombol muncul setelah selesai mengetik
-                }
-            }
+    // Fungsi efek mengetik
+    function type() {
+        if (index < text.length) {
+            typingText.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 100); // Kecepatan mengetik
+        } else {
+            nextButton && (nextButton.style.display = 'inline-block'); // Tampilkan tombol jika ada
+        }
+    }
 
-            type();
+    type();
 
-            // Menambahkan transisi untuk gambar yang berubah
-            let imageIndex = 0; // Indeks gambar
-            const images = ["asset/img/img4.jpg", "asset/img/img3.jpg", "asset/img/img5.jpg", "asset/img/img6.jpg", "asset/img/img7.JPG", "asset/img/img8.jpg", "asset/img/img2.jpg"]; // Array gambar
-            const dynamicImage = document.getElementById("dynamicImage");
+    // Gambar untuk efek transisi
+    let imageIndex = 0; // Indeks gambar
+    const images = [
+        "asset/img/img4.jpg",
+        "asset/img/img3.jpg",
+        "asset/img/img5.jpg",
+        "asset/img/img6.jpg",
+        "asset/img/img7.JPG",
+        "asset/img/img8.jpg",
+        "asset/img/img2.jpg"
+    ]; // Array gambar
+    const dynamicImage = document.getElementById("dynamicImage");
 
-            // Fungsi untuk mengubah gambar
-            function changeImage() {
-                dynamicImage.classList.add("fade"); // Menambahkan kelas fade untuk membuat gambar menghilang
+    // Fungsi untuk mengganti gambar dengan efek transisi
+    function changeImage() {
+        dynamicImage.classList.add("fade-out"); // Tambahkan kelas untuk memulai transisi memudar
 
-                // Tunggu 1 detik agar gambar menghilang dengan transisi
-                setTimeout(function () {
-                    // Ganti gambar
-                    dynamicImage.src = images[imageIndex];
+        // Tunggu hingga transisi selesai
+        setTimeout(() => {
+            imageIndex = (imageIndex + 1) % images.length; // Perbarui indeks gambar
+            dynamicImage.src = images[imageIndex]; // Ganti gambar
 
-                    // Tambahkan kelas fade lagi untuk transisi
-                    dynamicImage.classList.remove("fade");
+            // Tunggu hingga gambar baru dimuat, lalu hapus efek fade-out
+            dynamicImage.onload = () => {
+                dynamicImage.classList.remove("fade-out");
+            };
+        }, 1000); // Durasi sesuai dengan transisi CSS
+    }
 
-                    // Update indeks gambar
-                    imageIndex = (imageIndex + 1) % images.length; // Gambar akan berulang (loop)
-
-                }, 1000); // Tunggu 1 detik untuk transisi fade
-            }
-
-            // Ubah gambar setiap 3 detik
-            setInterval(changeImage, 3000);
-        };
+    // Ganti gambar setiap 3 detik
+    setInterval(changeImage, 3000);
+};
     </script>
 </body>
 
